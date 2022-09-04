@@ -1,0 +1,60 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow strict-local
+ */
+
+import React, {Component} from 'react';
+import type {Node} from 'react';
+import {
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  useColorScheme,
+  View,
+} from 'react-native';
+
+// justify-content : flex-start, flex-end, center, space-between, space-arround
+//flexWrap: nowrap, wrap
+// align-items
+
+
+export default class App extends Component {
+  render(){
+    return (
+      <View style={[{flex:1}]}>
+        <View style={[{flex:5,flexDirection:'row',justifyContent:'space-around',marginTop:50}]}>
+          <View style={[{backgroundColor:'red',width:50, height:50}]}/>
+          <View style={[{backgroundColor:'yellow',width:50, height:50}]}/>
+        </View>
+        <View style={[{flex:1,flexDirection:'row'}]}>
+          <View style={[style.welcome_area,{backgroundColor:'blue'}]}/>
+          <View style={[style.welcome_area,{backgroundColor:'yellow'}]}/>
+          <View style={[style.welcome_area,{backgroundColor:'pink'}]}/>
+        </View>    
+      </View>
+    )
+    
+  }
+}
+
+const style = StyleSheet.create({
+  welcome_area:{ backgroundColor:'red', flex:1},
+  welcome_text:{ color:'white', fontSize:20}
+});
+
+
+/*
+export const App = () => {
+  return (
+    <View style={{ paddingTop:150 }}>
+    <Text>Merhaba</Text>
+  </View>
+  )
+}
+export default App;
+*/

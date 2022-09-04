@@ -1,0 +1,53 @@
+
+
+import React, {Component} from 'react';
+import type {Node} from 'react';
+import {
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  useColorScheme,
+  View,
+} from 'react-native';
+
+// justify-content : flex-start, flex-end, center, space-between, space-arround  
+// (sağa sola ve boşluk yapısına göre hizala) x ekseninde calısır.
+// alignItems: flex-start, flex-end, center, stretch 
+//justify-content'in tam tersi y ekseninde iş yapar
+//flexWrap: nowrap, wrap  (sığmayanları yatay yada diket sığdır)
+
+
+export default class App extends Component {
+  render(){
+    return (
+      <View style={[{flex:1}]}>
+        <View style={[{flex:5,flexDirection:'column',alignItems:'stretch'}]}>
+          <View style={[{backgroundColor:'red',width:100, height:150, }]}/>
+          <View style={[{backgroundColor:'yellow',width:100, height:150, }]}/>
+          <View style={[{backgroundColor:'black',width:100, height:150, }]}/>
+
+        </View>   
+      </View>
+    )
+    
+  }
+}
+
+const style = StyleSheet.create({
+  welcome_area:{ backgroundColor:'red', flex:1},
+  welcome_text:{ color:'white', fontSize:20}
+});
+
+
+/*
+export const App = () => {
+  return (
+    <View style={{ paddingTop:150 }}>
+    <Text>Merhaba</Text>
+  </View>
+  )
+}
+export default App;
+*/
