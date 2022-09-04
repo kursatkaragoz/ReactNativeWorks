@@ -1,30 +1,58 @@
 import React, { Component } from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 
 
-//State ile işlem yapılmayacak ise bu yapıyı kullanmak mantıklıdır.
-//Complex yapı söz konusu ise diğer yapı mantıklı
-const FirstComponent = ({name,text}) => {
+
+/*
+const FirstComponent = ({name,year, changeState}) => {
     return(
         <View>
-            <Text>{name} {text} First Component</Text>
+            <Text>{name} {year} First Component</Text>
+            <TouchableOpacity onPress={changeState}>
+                <Text>
+                    Değiştir
+                </Text>
+            </TouchableOpacity>
         </View>
     )
 }
 
 export default FirstComponent;
 
+*/
 
 
-/*
+
+
 export default class FirstComponent extends Component {
+    constructor() {
+        super();
+        this.state = {
+            address: ' '
+        }
+    }
+
+    changeAddress = () => {
+        this.setState({address:'Istanbul'})
+    }
+
+
     render(){
+        const {name, year, changeState} = this.props;
+        const { address } = this.state;
         return(
             <View>
-                <Text> First Component</Text>
+                <Text>{name} {year} {address} First Component</Text>
+                <TouchableOpacity onPress={() => {
+                    this.changeAddress();
+                    changeState();                    
+                    }}>
+                    <Text>
+                        Değiştir
+                    </Text>
+                </TouchableOpacity>
             </View>
-        )    
+        )
     }
 
 }
-*/
